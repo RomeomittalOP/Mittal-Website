@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
 import About from "@/components/About";
+import Founder from "@/components/Founder";
 import Services from "@/components/Services";
 import Pricing from "@/components/Pricing";
 import Projects from "@/components/Projects";
@@ -34,6 +35,7 @@ export default function Home() {
         <Hero />
         <TrustLogos />
         <About />
+        <Founder />
         <Services />
         <MarqueeStrip />
         <Pricing />
