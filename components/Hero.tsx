@@ -1,10 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import type { MotionValue } from "framer-motion";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-
-const Scene3D = dynamic(() => import("./Scene3D"), { ssr: false, loading: () => null });
 import {
   ArrowRight,
   Sparkles,
@@ -19,10 +16,10 @@ import {
 type FloatCard = { icon: LucideIcon; label: string; className: string; depth: number };
 
 const floatingCards: FloatCard[] = [
-  { icon: TrendingUp, label: "+120% Leads", className: "left-[-10%] top-[12%]", depth: 50 },
-  { icon: Clock, label: "10 Days Delivery", className: "right-[-8%] top-[6%]", depth: 70 },
-  { icon: Layers, label: "Modern UI", className: "left-[-6%] bottom-[14%]", depth: 60 },
-  { icon: Search, label: "SEO Ready", className: "right-[-10%] bottom-[8%]", depth: 80 },
+  { icon: TrendingUp, label: "+120% Leads", className: "left-[-9%] top-[12%]", depth: 50 },
+  { icon: Clock, label: "10 Days Delivery", className: "right-[-7%] top-[6%]", depth: 70 },
+  { icon: Layers, label: "Modern UI", className: "left-[-5%] bottom-[14%]", depth: 60 },
+  { icon: Search, label: "SEO Ready", className: "right-[-9%] bottom-[8%]", depth: 80 },
 ];
 
 function FloatingCard({
@@ -55,11 +52,13 @@ function FloatingCard({
 }
 
 export default function Hero() {
-  // Mouse position in [-0.5, 0.5]
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
   const sx = useSpring(mx, { stiffness: 120, damping: 18, mass: 0.4 });
   const sy = useSpring(my, { stiffness: 120, damping: 18, mass: 0.4 });
+
+  const rotateY = useTransform(sx, [-0.5, 0.5], [12, -12]);
+  const rotateX = useTransform(sy, [-0.5, 0.5], [-10, 10]);
 
   const handleMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -175,7 +174,7 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right: interactive 3D scene */}
+        {/* Right: interactive mockup */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -186,25 +185,50 @@ export default function Hero() {
         >
           {/* Rotating glow ring */}
           <motion.div
-            className="absolute h-[115%] w-[115%] rounded-full opacity-60 blur-[1px] [mask:radial-gradient(closest-side,transparent_70%,black_72%)]"
+            className="absolute h-[112%] w-[112%] rounded-full opacity-60 blur-[1px] [mask:radial-gradient(closest-side,transparent_70%,black_72%)]"
             style={{
               background:
-                "conic-gradient(from 0deg, transparent, rgba(255,255,255,0.35), transparent 38%, transparent 62%, rgba(255,255,255,0.18), transparent)",
+                "conic-gradient(from 0deg, transparent, rgba(255,255,255,0.32), transparent 38%, transparent 62%, rgba(255,255,255,0.16), transparent)",
             }}
             animate={{ rotate: 360 }}
             transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
           />
-          <div className="absolute h-[70%] w-[70%] rounded-full bg-white/[0.05] blur-3xl" />
+          <div className="absolute h-[74%] w-[74%] rounded-full bg-white/[0.05] blur-3xl" />
 
-          {/* Real WebGL 3D scene */}
-          <div className="absolute inset-0">
-            <Scene3D />
-          </div>
+          {/* 3D-tilt mockup */}
+          <motion.div
+            style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
+            className="relative w-[88%]"
+          >
+            <div className="glass-strong relative rounded-2xl p-3 shadow-2xl shadow-black/60">
+              <div className="flex items-center gap-1.5 px-2 py-2">
+                <span className="h-3 w-3 rounded-full bg-white/20" />
+                <span className="h-3 w-3 rounded-full bg-white/15" />
+                <span className="h-3 w-3 rounded-full bg-white/10" />
+                <div className="ml-3 h-5 flex-1 rounded-md bg-white/5" />
+              </div>
+              <div className="rounded-xl bg-gradient-to-b from-white/[0.06] to-transparent p-4">
+                <div className="h-28 rounded-lg bg-accent-gradient bg-[length:200%_auto] animate-gradient-pan opacity-90" />
+                <div className="mt-4 grid grid-cols-3 gap-3">
+                  {[0, 1, 2].map((i) => (
+                    <div key={i} className="h-16 rounded-lg bg-white/[0.06]" />
+                  ))}
+                </div>
+                <div className="mt-4 space-y-2">
+                  <div className="h-3 w-3/4 rounded bg-white/10" />
+                  <div className="h-3 w-1/2 rounded bg-white/10" />
+                </div>
+                <div className="mt-4 flex gap-2">
+                  <div className="h-8 w-24 rounded-full bg-white/90" />
+                  <div className="h-8 w-20 rounded-full bg-white/10" />
+                </div>
+              </div>
+            </div>
 
-          {/* Floating stat cards overlaid in 3D space */}
-          {floatingCards.map((card) => (
-            <FloatingCard key={card.label} card={card} sx={sx} sy={sy} />
-          ))}
+            {floatingCards.map((card) => (
+              <FloatingCard key={card.label} card={card} sx={sx} sy={sy} />
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>
