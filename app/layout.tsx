@@ -1,20 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Cormorant_Garamond } from "next/font/google";
+//import { Inter, Cormorant_Garamond } from "next/font/google";
 import { BRAND } from "@/lib/data";
 import "./globals.css";
 
-const inter = Inter({
+/*/const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
-});
+});*/
+font-family: serif;
 
-const cormorant = Cormorant_Garamond({
+/*const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-display",
   display: "swap",
-});
+});*/
 
 const siteUrl = "https://mittal.website";
 
