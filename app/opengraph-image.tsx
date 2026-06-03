@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
 
 export const alt = "MITTAL® DIGITAL — Websites That Make Businesses Look Expensive";
 export const size = { width: 1200, height: 630 };
