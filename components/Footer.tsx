@@ -29,6 +29,10 @@ export default function Footer() {
             <p className="mt-4 text-sm leading-relaxed text-white/55">
               {BRAND.tagline} Premium websites, landing pages and custom web apps built for growth.
             </p>
+            <p className="mt-3 text-xs leading-relaxed text-white/40">
+              Website development agency serving Delhi NCR — Delhi, Noida, Gurugram, Ghaziabad &amp;
+              Faridabad — and clients across India.
+            </p>
 
             <div className="mt-5 space-y-2 text-sm">
               <a

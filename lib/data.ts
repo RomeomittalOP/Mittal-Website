@@ -314,6 +314,11 @@ export const FAQS: FAQItem[] = [
       "Our professional websites start from just ₹5,555. The final price depends on the number of pages, features and integrations — we share a clear, fixed quote on a free consultation before any work begins, with no hidden charges.",
   },
   {
+    question: "Do you build websites for businesses in Delhi NCR?",
+    answer:
+      "Yes — we're a Delhi NCR based web development agency working with startups, local businesses, restaurants and brands across Delhi, Noida, Gurugram, Ghaziabad and Faridabad, as well as clients all over India. Everything is handled online, so distance is never an issue.",
+  },
+  {
     question: "How long does a website take?",
     answer:
       "Usually within 10 days depending on complexity. Simple sites can be faster, while custom web apps may take a little longer — we confirm an exact timeline on our discovery call.",
