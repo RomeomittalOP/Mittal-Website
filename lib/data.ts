@@ -304,6 +304,16 @@ export type FAQItem = { question: string; answer: string };
 
 export const FAQS: FAQItem[] = [
   {
+    question: "I want to get a website made — how do I start?",
+    answer:
+      "Simple. Register your project using the contact form below or message us on WhatsApp at +91 77019 03505. Our team coordinates with you within 24 hours, plans everything, and your premium website is usually delivered within 10 days.",
+  },
+  {
+    question: "How much does it cost to get a website made in India?",
+    answer:
+      "Our professional websites start from just ₹5,555. The final price depends on the number of pages, features and integrations — we share a clear, fixed quote on a free consultation before any work begins, with no hidden charges.",
+  },
+  {
     question: "How long does a website take?",
     answer:
       "Usually within 10 days depending on complexity. Simple sites can be faster, while custom web apps may take a little longer — we confirm an exact timeline on our discovery call.",
