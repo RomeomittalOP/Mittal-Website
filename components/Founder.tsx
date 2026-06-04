@@ -22,18 +22,20 @@ export default function Founder() {
             <div className="absolute -inset-6 -z-10 rounded-[2rem] bg-white/[0.06] blur-3xl" />
             <div className="absolute inset-0 -z-10 translate-x-4 translate-y-4 rounded-3xl border border-white/10" />
 
-            <div className="group relative overflow-hidden rounded-3xl glass-strong p-2">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+            <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[#181820] to-[#0b0b0d]">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
+                {/* premium spotlight behind subject */}
+                <div className="absolute inset-0 bg-[radial-gradient(58%_44%_at_50%_26%,rgba(255,255,255,0.13),transparent_70%)]" />
                 <Image
                   src="/shubham.png"
                   alt="Shubham Mittal — Founder & Brand Ambassador, MITTAL.WEBSITE"
                   fill
                   sizes="(max-width: 768px) 90vw, 420px"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-contain object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
                   priority
                 />
-                {/* bottom gradient + name plate */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-5">
+                {/* floor fade + name plate */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0b0b0d] via-[#0b0b0d]/70 to-transparent p-5 pt-16">
                   <div className="flex items-center gap-2">
                     <span className="font-display text-xl font-semibold text-white">
                       Shubham Mittal
