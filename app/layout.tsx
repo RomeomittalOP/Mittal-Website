@@ -1,6 +1,15 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import { BRAND, FAQS } from "@/lib/data";
+import Preloader from "@/components/Preloader";
+import AuroraBackground from "@/components/AuroraBackground";
+import ScrollProgress from "@/components/ScrollProgress";
+import CursorFollower from "@/components/CursorFollower";
+import CardSpotlight from "@/components/CardSpotlight";
+import AnnouncementBar from "@/components/AnnouncementBar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FloatingActions from "@/components/FloatingActions";
 import "./globals.css";
 
 const inter = Inter({
@@ -152,7 +161,16 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <Preloader />
+        <AuroraBackground />
+        <ScrollProgress />
+        <CursorFollower />
+        <CardSpotlight />
+        <AnnouncementBar />
+        <Navbar />
         {children}
+        <Footer />
+        <FloatingActions />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

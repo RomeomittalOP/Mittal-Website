@@ -27,7 +27,7 @@ export default function Navbar() {
           scrolled ? "glass-strong shadow-lg shadow-black/40" : "border border-transparent"
         }`}
       >
-        <a href="#home" className="flex items-center gap-2.5">
+        <a href="/" className="flex items-center gap-2.5">
           <Image
             src="/logo.png"
             alt="MITTAL.WEBSITE"
@@ -55,7 +55,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <a href="#contact" className="btn-primary !px-6 !py-2.5 text-sm">
+          <a href="/#contact" className="btn-primary !px-6 !py-2.5 text-sm">
             Get Free Consultation
           </a>
         </div>
@@ -91,7 +91,7 @@ export default function Navbar() {
               ))}
             </ul>
             <a
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="btn-primary mt-2 w-full"
             >
