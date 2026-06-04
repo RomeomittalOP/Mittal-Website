@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/"],
     },
-    sitemap: "https://mittal.website/sitemap.xml",
+    sitemap: "https://mittaldev.website/sitemap.xml",
   };
 }

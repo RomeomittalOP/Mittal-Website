@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
-import { BRAND } from "@/lib/data";
+import { BRAND, FAQS } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
   display: "swap",
 });
 
-const siteUrl = "https://mittal.website";
+const siteUrl = "https://mittaldev.website";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -54,6 +54,7 @@ export const metadata: Metadata = {
       "Premium websites, landing pages and custom web apps built for growth. Designed to convert.",
   },
   robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
 };
 
 export const viewport: Viewport = {
@@ -67,25 +68,56 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    name: "MITTAL® DIGITAL",
-    alternateName: "mittal.website",
-    description:
-      "Premium web development agency building websites, landing pages and custom web apps that help businesses attract customers and convert.",
-    url: siteUrl,
-    email: BRAND.email,
-    telephone: BRAND.phone,
-    priceRange: "₹₹",
-    areaServed: "IN",
-    slogan: BRAND.tagline,
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: BRAND.phone,
-      email: BRAND.email,
-      contactType: "sales",
-      availableLanguage: ["English", "Hindi"],
-    },
-    sameAs: [BRAND.whatsapp],
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${siteUrl}/#organization`,
+        name: "MITTAL® DIGITAL",
+        alternateName: "mittal.website",
+        url: siteUrl,
+        slogan: BRAND.tagline,
+        email: BRAND.email,
+        telephone: BRAND.phone,
+        sameAs: [BRAND.whatsapp],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "MITTAL® DIGITAL",
+        inLanguage: "en-IN",
+        publisher: { "@id": `${siteUrl}/#organization` },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#service`,
+        name: "MITTAL® DIGITAL",
+        description:
+          "Premium web development agency building websites, landing pages and custom web apps that help businesses attract customers and convert.",
+        url: siteUrl,
+        email: BRAND.email,
+        telephone: BRAND.phone,
+        priceRange: "₹₹",
+        areaServed: "IN",
+        founder: { "@type": "Person", name: "Shubham Mittal" },
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: BRAND.phone,
+          email: BRAND.email,
+          contactType: "sales",
+          availableLanguage: ["English", "Hindi"],
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${siteUrl}/#faq`,
+        mainEntity: FAQS.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      },
+    ],
   };
 
   return (
