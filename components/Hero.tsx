@@ -161,7 +161,7 @@ export default function Hero() {
             className="mt-9 flex items-center gap-6 text-sm text-white/45"
           >
             <div>
-              <span className="font-display text-xl font-bold text-white">10+</span> Projects
+              <span className="font-display text-xl font-bold text-white">10-Day</span> Delivery
             </div>
             <div className="h-8 w-px bg-white/10" />
             <div>

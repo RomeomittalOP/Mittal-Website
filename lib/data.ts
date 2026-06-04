@@ -46,10 +46,10 @@ export const TRUST_LOGOS: string[] = [
 export type Stat = { value: string; label: string };
 
 export const STATS: Stat[] = [
-  { value: "10+", label: "Projects Delivered" },
   { value: "100%", label: "Client Satisfaction" },
-  { value: "10 Days", label: "Average Delivery" },
-  { value: "Custom", label: "Tailored Solutions" },
+  { value: "10-Day", label: "Average Delivery" },
+  { value: "On-Time", label: "Every Project Delivered" },
+  { value: "Founder-Led", label: "Hands-On Service" },
 ];
 
 export type Service = {

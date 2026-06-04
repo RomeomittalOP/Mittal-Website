@@ -7,39 +7,39 @@ import Reveal from "./Reveal";
 const teams = [
   {
     icon: Palette,
-    name: "Creative & Brand Team",
-    desc: "Brand strategy, creative direction and visual identity that make your business unforgettable.",
-    tags: ["Brand Strategy", "Creative Direction", "Art Direction"],
+    name: "Brand & Strategy",
+    desc: "We start with your goals and audience, then shape a clear direction so the site actually fits your business.",
+    tags: ["Brand Direction", "Strategy", "Messaging"],
   },
   {
     icon: PenTool,
-    name: "UI/UX Design Team",
-    desc: "Pixel-perfect, user-first interfaces crafted to look premium and convert visitors into customers.",
+    name: "UI/UX Design",
+    desc: "Clean, user-first interfaces designed to look expensive and guide visitors towards taking action.",
     tags: ["UI/UX Design", "Wireframing", "Design Systems"],
   },
   {
     icon: Code2,
-    name: "Development Team",
-    desc: "Fast, scalable, modern code — websites, web apps and custom systems built to last.",
+    name: "Web Development",
+    desc: "Fast, modern code on Next.js — websites, web apps and custom systems built to last.",
     tags: ["Next.js", "Full-Stack", "APIs & Integrations"],
   },
   {
     icon: Wand2,
     name: "Motion & Interaction",
-    desc: "Premium animations and micro-interactions that make every scroll feel alive and high-end.",
-    tags: ["Motion Design", "Animation", "Interactions"],
+    desc: "Subtle animations and micro-interactions that make every scroll feel polished and high-end.",
+    tags: ["Motion", "Animation", "Interactions"],
   },
   {
     icon: LineChart,
-    name: "SEO & Growth Team",
-    desc: "Technical SEO, performance tuning and conversion optimization to actually grow your business.",
-    tags: ["SEO", "Performance", "Conversion (CRO)"],
+    name: "SEO & Performance",
+    desc: "Technical SEO, fast load times and conversion-focused structure so the site can actually get found.",
+    tags: ["SEO", "Performance", "Conversion"],
   },
   {
     icon: ShieldCheck,
-    name: "QA & Support Team",
-    desc: "Rigorous testing across devices and ongoing support so your website always just works.",
-    tags: ["Quality Assurance", "Testing", "Ongoing Support"],
+    name: "Testing & Support",
+    desc: "We test across devices before launch and stay reachable after, so your site keeps running smoothly.",
+    tags: ["QA & Testing", "Launch", "Support"],
   },
 ];
 
@@ -48,13 +48,13 @@ export default function Team() {
     <section id="team" className="py-24">
       <div className="container-px">
         <SectionHeading
-          eyebrow="Our Studio"
+          eyebrow="How We Work"
           title={
             <>
-              A Full Creative Team <span className="gradient-text">Behind Every Project</span>
+              One Focused Studio, <span className="gradient-text">End To End</span>
             </>
           }
-          subtitle="We're not a one-person freelancer setup. From brand strategy to launch, a dedicated in-house team of designers, developers and growth experts handles your project end to end."
+          subtitle="We're a small, hands-on studio — not a faceless agency. The same people take your project from strategy to launch, so nothing gets lost in handoffs and every detail gets attention."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
