@@ -10,6 +10,7 @@ import TrustLogos from "@/components/TrustLogos";
 import About from "@/components/About";
 import Founder from "@/components/Founder";
 import Services from "@/components/Services";
+import Team from "@/components/Team";
 import Pricing from "@/components/Pricing";
 import Projects from "@/components/Projects";
 import Process from "@/components/Process";
@@ -37,6 +38,7 @@ export default function Home() {
         <About />
         <Founder />
         <Services />
+        <Team />
         <MarqueeStrip />
         <Pricing />
         <Projects />
