@@ -119,7 +119,7 @@ export default async function BlogPost({
         <div className="mt-12 rounded-2xl glass-strong p-7 text-center">
           <h3 className="font-display text-xl font-semibold">Ready to get your website made?</h3>
           <p className="mx-auto mt-2 max-w-md text-sm text-white/60">
-            Premium websites from ₹5,555 — free consultation, delivered within 10 days.
+            Premium websites from ₹15,000 — free consultation, delivered within 10 days.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
             <Link href="/#contact" className="btn-primary group">

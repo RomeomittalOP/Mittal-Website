@@ -169,7 +169,7 @@ export default function Hero() {
             </div>
             <div className="h-8 w-px bg-white/10" />
             <div>
-              From <span className="font-display text-xl font-bold gradient-text">₹5,555</span>
+              From <span className="font-display text-xl font-bold gradient-text">₹15,000</span>
             </div>
           </motion.div>
         </div>

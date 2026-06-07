@@ -30,11 +30,11 @@ const siteUrl = "https://mittaldev.website";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Website Development Agency in Delhi NCR — MITTAL.WEBSITE | From ₹5,555",
+    default: "Website Development Agency in Delhi NCR — MITTAL.WEBSITE | From ₹15,000",
     template: "%s | MITTAL.WEBSITE",
   },
   description:
-    "Want to get a website made in Delhi NCR? MITTAL.WEBSITE is a premium web development agency building business websites, landing pages & web apps that convert. Starting from ₹5,555 — free consultation, delivered in 10 days. Serving Delhi, Noida, Gurugram, Ghaziabad, Faridabad & all of India.",
+    "Want to get a website made in Delhi NCR? MITTAL.WEBSITE is a premium web development agency building business websites, e-commerce stores & web apps that convert. Starting from ₹15,000 — free consultation, delivered in 10 days. Serving Delhi, Noida, Gurugram, Ghaziabad, Faridabad & all of India.",
   keywords: [
     "website banwani hai",
     "website kaise banwaye",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     siteName: "MITTAL® DIGITAL",
     title: "MITTAL® DIGITAL — Websites That Make Businesses Look Expensive",
     description:
-      "Premium websites, landing pages and custom web apps built for growth. Designed to convert. Starting from ₹5,555.",
+      "Premium websites, e-commerce stores and custom web apps built for growth. Designed to convert. Starting from ₹15,000.",
   },
   twitter: {
     card: "summary_large_image",

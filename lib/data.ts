@@ -16,7 +16,7 @@ export const BRAND = {
   phone: "+917701903505",
   phoneDisplay: "+91 77019 03505",
   whatsapp: "https://wa.me/917701903505",
-  startingPrice: "₹5,555",
+  startingPrice: "₹15,000",
 };
 
 export const ASSURANCE =
@@ -104,60 +104,131 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export type PricingTier = {
+export type Package = {
   name: string;
   price: string;
-  priceNote?: string;
+  from?: boolean; // show "From" before price
+  priceNote?: string; // e.g. "/month"
+  regularPrice?: string; // strikethrough
   highlight?: boolean;
   badge?: string;
-  description: string;
+  tagline: string;
   features: string[];
+  idealFor?: string;
+  note?: string;
   cta: string;
 };
 
-export const PRICING: PricingTier[] = [
+export const PACKAGES: Package[] = [
   {
-    name: "Starter Website",
-    price: "₹5,555",
-    description: "The perfect launchpad for local businesses and new startups.",
-    features: [
-      "Responsive Design",
-      "Up To 5 Pages",
-      "Contact Form",
-      "Modern UI",
-      "Mobile Friendly",
-    ],
-    cta: "Get Started",
-  },
-  {
-    name: "Business Pro",
-    price: "₹11,999",
+    name: "Website Development",
+    price: "₹15,000",
+    from: true,
     highlight: true,
     badge: "Most Popular",
-    description: "For growing brands ready to dominate their market online.",
+    tagline:
+      "A premium business website that makes you look established and turns visitors into real enquiries.",
     features: [
-      "Everything in Starter",
-      "Advanced UI",
-      "SEO Setup",
-      "Premium Animations",
-      "Blog Integration",
-      "Performance Optimization",
+      "Premium Business Website",
+      "Responsive & Mobile-Optimised",
+      "Lead Generation Setup",
+      "WhatsApp Integration",
+      "Contact Forms",
+      "SEO-Friendly Structure",
+      "Domain Connection",
+      "Deployment Support",
     ],
+    idealFor: "Businesses, Manufacturers, Agencies, Local Brands & Professionals",
     cta: "Get Started",
   },
   {
-    name: "Custom Solution",
-    price: "Custom",
-    priceNote: "Tailored pricing",
-    description: "Full-scale web apps, portals and software built around you.",
+    name: "E-Commerce Website",
+    price: "₹20,000",
+    from: true,
+    tagline:
+      "A complete online store that showcases your products beautifully and takes orders 24/7.",
     features: [
-      "Custom Dashboard",
-      "Authentication",
-      "Database",
+      "Product Catalog",
+      "Product Filters",
+      "Category Management",
+      "Shopping Cart",
+      "Payment Gateway Integration",
       "Admin Panel",
-      "APIs & Integrations",
-      "Complex Features",
+      "Mobile Responsive Design",
+      "SEO-Friendly Architecture",
     ],
+    idealFor: "Retail Brands, Manufacturers & Product Businesses",
+    cta: "Get Started",
+  },
+  {
+    name: "Brand Growth Package",
+    price: "₹10,000",
+    priceNote: "/month",
+    tagline:
+      "Consistent, premium content that keeps your brand visible and generating leads every single month.",
+    features: [
+      "12 Premium Creatives / Month",
+      "Product Showcase Posts",
+      "Educational Content",
+      "Industry & Festival Posts",
+      "Content Writing",
+      "Branding Strategy",
+      "WhatsApp Lead-Gen Focus",
+      "Monthly Content Planning",
+    ],
+    idealFor: "Businesses with a website that want consistent online growth",
+    cta: "Get Started",
+  },
+  {
+    name: "3-Month Growth Accelerator",
+    price: "₹40,000",
+    regularPrice: "₹45,000",
+    badge: "Save ₹5,000",
+    tagline:
+      "A focused 3-month sprint to build consistent positioning, trust and long-term momentum for your brand.",
+    features: [
+      "Everything in Brand Growth Package",
+      "3-Month Content Strategy",
+      "Consistent Brand Positioning",
+      "Priority Support",
+      "Long-Term Content Planning",
+    ],
+    idealFor: "Brands serious about long-term growth & trust building",
+    note: "Payment structure: 50% advance, 50% after Month 2.",
+    cta: "Get Started",
+  },
+  {
+    name: "SEO Foundation Package",
+    price: "₹7,500",
+    from: true,
+    tagline: "The technical groundwork your website needs to start getting found on Google.",
+    features: [
+      "Meta Titles & Descriptions",
+      "Image Alt Tags",
+      "Schema Markup",
+      "Sitemap Setup",
+      "Robots.txt Configuration",
+      "Technical SEO Audit",
+      "Local SEO Foundation",
+    ],
+    idealFor: "Businesses that want to start ranking the right way",
+    note: "This package builds the SEO foundation. Rankings depend on competition, content and ongoing SEO efforts.",
+    cta: "Get Started",
+  },
+  {
+    name: "Custom Business Solutions",
+    price: "Custom Quote",
+    tagline:
+      "Custom software, automation and systems built around exactly how your business actually runs.",
+    features: [
+      "AI Automation",
+      "Custom Dashboards",
+      "CRM Systems",
+      "Business Management Tools",
+      "Lead Generation Systems",
+      "Internal Software",
+    ],
+    idealFor: "Businesses needing tailored tools beyond a standard website",
     cta: "Request Quote",
   },
 ];
@@ -311,7 +382,7 @@ export const FAQS: FAQItem[] = [
   {
     question: "How much does it cost to get a website made in India?",
     answer:
-      "Our professional websites start from just ₹5,555. The final price depends on the number of pages, features and integrations — we share a clear, fixed quote on a free consultation before any work begins, with no hidden charges.",
+      "Our premium business websites start from ₹15,000, e-commerce stores from ₹20,000, and the SEO Foundation package from ₹7,500. The final price depends on pages, features and integrations — we share a clear, fixed quote on a free consultation before any work begins, with no hidden charges.",
   },
   {
     question: "Do you build websites for businesses in Delhi NCR?",

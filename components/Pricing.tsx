@@ -1,7 +1,7 @@
 "use client";
 
-import { Check, Sparkles } from "lucide-react";
-import { PRICING } from "@/lib/data";
+import { Check, Sparkles, Info } from "lucide-react";
+import { PACKAGES } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -10,59 +10,78 @@ export default function Pricing() {
     <section id="pricing" className="py-24">
       <div className="container-px">
         <SectionHeading
-          eyebrow="Pricing"
+          eyebrow="Our Packages"
           title={
             <>
-              Transparent Pricing, <span className="gradient-text">Starting From ₹5,555</span>
+              Premium Packages, <span className="gradient-text">Built For Growth</span>
             </>
           }
-          subtitle="Premium quality without the agency price tag. Choose the package that fits where your business is headed."
+          subtitle="We don't just build websites — we help businesses establish a strong digital presence, generate trust and convert visitors into customers. Pick the package that fits your stage."
         />
 
-        <div className="mt-14 grid items-start gap-6 lg:grid-cols-3">
-          {PRICING.map((tier, i) => (
-            <Reveal key={tier.name} delay={i * 0.1}>
+        <div className="mt-14 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {PACKAGES.map((pkg, i) => (
+            <Reveal key={pkg.name} delay={(i % 3) * 0.08}>
               <div
-                className={`relative h-full rounded-2xl p-8 transition-all duration-500 ${
-                  tier.highlight
-                    ? "glass-strong shadow-2xl shadow-gold/20 lg:-translate-y-4 lg:scale-[1.03]"
+                className={`relative flex h-full flex-col rounded-2xl p-7 transition-all duration-500 ${
+                  pkg.highlight
+                    ? "glass-strong shadow-2xl shadow-white/5 ring-1 ring-white/20"
                     : "card-glow"
                 }`}
               >
-                {tier.highlight && (
+                {pkg.badge && (
                   <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-accent-gradient px-4 py-1 text-xs font-semibold text-ink shadow-lg">
                     <Sparkles size={12} className="mr-1 inline" />
-                    {tier.badge}
+                    {pkg.badge}
                   </span>
                 )}
 
-                <h3 className="font-display text-lg font-semibold text-white/90">{tier.name}</h3>
-                <p className="mt-2 text-sm text-white/55">{tier.description}</p>
+                <h3 className="font-display text-lg font-semibold text-white">{pkg.name}</h3>
 
-                <div className="mt-6 flex items-baseline gap-1">
-                  <span className="font-display text-4xl font-bold gradient-text">{tier.price}</span>
-                  {tier.priceNote && (
-                    <span className="text-sm text-white/50">{tier.priceNote}</span>
+                <div className="mt-4 flex items-baseline gap-1.5">
+                  {pkg.from && <span className="text-sm text-white/45">From</span>}
+                  <span className="font-display text-4xl font-bold gradient-text">{pkg.price}</span>
+                  {pkg.priceNote && <span className="text-sm text-white/50">{pkg.priceNote}</span>}
+                  {pkg.regularPrice && (
+                    <span className="text-sm text-white/35 line-through">{pkg.regularPrice}</span>
                   )}
                 </div>
 
+                <p className="mt-3 text-sm leading-relaxed text-white/55">{pkg.tagline}</p>
+
                 <a
-                  href="#contact"
-                  className={tier.highlight ? "btn-primary mt-6 w-full" : "btn-ghost mt-6 w-full"}
+                  href="/#contact"
+                  className={pkg.highlight ? "btn-primary mt-6 w-full" : "btn-ghost mt-6 w-full"}
                 >
-                  {tier.cta}
+                  {pkg.cta}
                 </a>
 
-                <ul className="mt-7 space-y-3">
-                  {tier.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2.5 text-sm text-white/75">
-                      <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent-soft">
+                <ul className="mt-7 space-y-2.5">
+                  {pkg.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm text-white/75">
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-accent-soft">
                         <Check size={12} className="text-electric" />
                       </span>
                       {f}
                     </li>
                   ))}
                 </ul>
+
+                {pkg.note && (
+                  <p className="mt-5 flex gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-3 text-xs leading-relaxed text-white/50">
+                    <Info size={14} className="mt-0.5 shrink-0 text-white/40" />
+                    {pkg.note}
+                  </p>
+                )}
+
+                {pkg.idealFor && (
+                  <p className="mt-auto pt-6 text-xs leading-relaxed text-white/40">
+                    <span className="font-semibold uppercase tracking-wider text-white/50">
+                      Ideal for:
+                    </span>{" "}
+                    {pkg.idealFor}
+                  </p>
+                )}
               </div>
             </Reveal>
           ))}
@@ -70,9 +89,10 @@ export default function Pricing() {
 
         <Reveal delay={0.2}>
           <p className="mx-auto mt-10 max-w-3xl rounded-2xl border border-white/10 bg-white/[0.03] px-6 py-4 text-center text-sm text-white/55">
-            <span className="font-semibold text-white/75">Please note:</span> Domain, Hosting,
-            Backend Services, APIs and Third-Party Integrations are charged separately according to
-            requirements.
+            <span className="font-semibold text-white/75">Please note:</span> Domain, hosting, paid
+            plugins, payment-gateway charges and third-party services are billed separately as per
+            your requirements. Every project starts with a free consultation and a clear, fixed
+            quote — no hidden costs.
           </p>
         </Reveal>
       </div>
