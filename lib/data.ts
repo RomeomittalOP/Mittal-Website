@@ -16,7 +16,7 @@ export const BRAND = {
   phone: "+917701903505",
   phoneDisplay: "+91 77019 03505",
   whatsapp: "https://wa.me/917701903505",
-  startingPrice: "₹15,000",
+  startingPrice: "₹5,555",
 };
 
 export const ASSURANCE =
@@ -33,15 +33,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Contact", href: "/#contact" },
 ];
 
-export const TRUST_LOGOS: string[] = [
-  "Veloura",
-  "ACCD",
-  "Omega",
-  "Vriksh",
-  "4 Knotts Stationery",
-  "Solid State Lights",
-  "ClearMyChallan",
-];
+export const TRUST_LOGOS: string[] = ["Solid State Lights", "ClearMyChallan"];
 
 export type Stat = { value: string; label: string };
 
@@ -109,7 +101,7 @@ export type Package = {
   price: string;
   from?: boolean; // show "From" before price
   priceNote?: string; // e.g. "/month"
-  regularPrice?: string; // strikethrough
+  marketPrice?: string; // typical agency rate, shown struck-through
   highlight?: boolean;
   badge?: string;
   tagline: string;
@@ -121,56 +113,76 @@ export type Package = {
 
 export const PACKAGES: Package[] = [
   {
-    name: "Website Development",
-    price: "₹15,000",
-    from: true,
-    highlight: true,
-    badge: "Most Popular",
+    name: "Starter Website",
+    price: "₹5,555",
+    marketPrice: "₹15,000",
     tagline:
-      "A premium business website that makes you look established and turns visitors into real enquiries.",
+      "The perfect, affordable launchpad — a clean, credible website that gets your business online fast.",
     features: [
-      "Premium Business Website",
-      "Responsive & Mobile-Optimised",
-      "Lead Generation Setup",
+      "Responsive Design",
+      "Up To 5 Pages",
+      "Mobile-Optimised",
+      "Contact Form",
       "WhatsApp Integration",
-      "Contact Forms",
-      "SEO-Friendly Structure",
+      "Basic On-Page SEO",
       "Domain Connection",
       "Deployment Support",
     ],
-    idealFor: "Businesses, Manufacturers, Agencies, Local Brands & Professionals",
+    idealFor: "New businesses, local shops, professionals & personal brands",
+    cta: "Get Started",
+  },
+  {
+    name: "Business Website",
+    price: "₹9,999",
+    marketPrice: "₹30,000",
+    highlight: true,
+    badge: "Most Popular",
+    tagline:
+      "A premium custom website that makes you look established and turns visitors into real enquiries.",
+    features: [
+      "Everything in Starter",
+      "Premium Custom Design",
+      "Lead Generation Setup",
+      "More Pages & Sections",
+      "SEO-Friendly Structure",
+      "Premium Animations",
+      "Performance Optimised",
+      "Priority Delivery",
+    ],
+    idealFor: "Businesses, Manufacturers, Agencies & Growing Brands",
     cta: "Get Started",
   },
   {
     name: "E-Commerce Website",
-    price: "₹20,000",
+    price: "₹14,999",
     from: true,
+    marketPrice: "₹50,000",
     tagline:
       "A complete online store that showcases your products beautifully and takes orders 24/7.",
     features: [
-      "Product Catalog",
-      "Product Filters",
+      "Product Catalog & Filters",
       "Category Management",
       "Shopping Cart",
       "Payment Gateway Integration",
       "Admin Panel",
       "Mobile Responsive Design",
       "SEO-Friendly Architecture",
+      "Order Management",
     ],
     idealFor: "Retail Brands, Manufacturers & Product Businesses",
     cta: "Get Started",
   },
   {
     name: "Brand Growth Package",
-    price: "₹10,000",
+    price: "₹6,999",
     priceNote: "/month",
+    marketPrice: "₹15,000/mo",
     tagline:
       "Consistent, premium content that keeps your brand visible and generating leads every single month.",
     features: [
       "12 Premium Creatives / Month",
       "Product Showcase Posts",
-      "Educational Content",
-      "Industry & Festival Posts",
+      "Educational & Festival Posts",
       "Content Writing",
       "Branding Strategy",
       "WhatsApp Lead-Gen Focus",
@@ -180,34 +192,16 @@ export const PACKAGES: Package[] = [
     cta: "Get Started",
   },
   {
-    name: "3-Month Growth Accelerator",
-    price: "₹40,000",
-    regularPrice: "₹45,000",
-    badge: "Save ₹5,000",
-    tagline:
-      "A focused 3-month sprint to build consistent positioning, trust and long-term momentum for your brand.",
-    features: [
-      "Everything in Brand Growth Package",
-      "3-Month Content Strategy",
-      "Consistent Brand Positioning",
-      "Priority Support",
-      "Long-Term Content Planning",
-    ],
-    idealFor: "Brands serious about long-term growth & trust building",
-    note: "Payment structure: 50% advance, 50% after Month 2.",
-    cta: "Get Started",
-  },
-  {
     name: "SEO Foundation Package",
-    price: "₹7,500",
+    price: "₹4,999",
     from: true,
+    marketPrice: "₹12,000",
     tagline: "The technical groundwork your website needs to start getting found on Google.",
     features: [
       "Meta Titles & Descriptions",
       "Image Alt Tags",
       "Schema Markup",
-      "Sitemap Setup",
-      "Robots.txt Configuration",
+      "Sitemap & Robots.txt Setup",
       "Technical SEO Audit",
       "Local SEO Foundation",
     ],
@@ -240,71 +234,29 @@ export type Project = {
   tech: string[];
   gradient: string;
   initials: string;
+  liveUrl?: string;
 };
 
 export const PROJECTS: Project[] = [
   {
-    name: "Veloura",
-    category: "Luxury Brand Website",
-    summary:
-      "A refined, editorial web presence that positions Veloura as a premium lifestyle label and lifts brand perception.",
-    tech: ["Next.js", "Framer Motion", "Tailwind"],
-    gradient: "from-violet/40 to-electric/30",
-    initials: "VL",
-  },
-  {
-    name: "ACCD",
-    category: "Professional Business Website",
-    summary:
-      "A credibility-first corporate site that communicates expertise and converts visitors into qualified enquiries.",
-    tech: ["Next.js", "TypeScript", "SEO"],
-    gradient: "from-electric/40 to-violet/30",
-    initials: "AC",
-  },
-  {
-    name: "Omega",
-    category: "Corporate Presence",
-    summary:
-      "A bold corporate identity online — clear messaging, strong trust signals and a frictionless contact flow.",
-    tech: ["React", "Tailwind", "CMS"],
-    gradient: "from-gold/30 to-electric/30",
-    initials: "OM",
-  },
-  {
-    name: "Vriksh",
-    category: "Environmental Initiative Platform",
-    summary:
-      "A mission-driven platform that tells an environmental story and drives community sign-ups and engagement.",
-    tech: ["Next.js", "Framer Motion", "API"],
-    gradient: "from-emerald-400/30 to-electric/30",
-    initials: "VR",
-  },
-  {
-    name: "4 Knotts Stationery",
-    category: "Premium Stationery Brand",
-    summary:
-      "A tactile, product-forward brand site that showcases a premium stationery range and grows online sales.",
-    tech: ["Ecommerce", "Tailwind", "Payments"],
-    gradient: "from-gold/40 to-violet/30",
-    initials: "4K",
-  },
-  {
     name: "Solid State Lights",
     category: "Industrial Product Website",
     summary:
-      "A technical yet approachable product site for an LED lighting manufacturer, built to generate B2B leads.",
-    tech: ["Next.js", "Node", "Admin"],
+      "A technical yet approachable product site for an LED lighting manufacturer, built to showcase products and generate B2B leads.",
+    tech: ["Next.js", "Node", "Admin Panel"],
     gradient: "from-electric/40 to-gold/30",
     initials: "SS",
+    liveUrl: "https://solidstate.co.in/",
   },
   {
     name: "ClearMyChallan",
     category: "Traffic Challan Solution Platform",
     summary:
-      "A utility-first web app that helps users resolve traffic challans quickly with a clean, reassuring UX.",
+      "A utility-first web app that helps users resolve traffic challans quickly with a clean, reassuring user experience.",
     tech: ["Web App", "Auth", "Database"],
     gradient: "from-violet/40 to-gold/30",
     initials: "CM",
+    liveUrl: "https://www.clearmychallan.co.in/",
   },
 ];
 
@@ -326,50 +278,7 @@ export type Testimonial = {
   initials: string;
 };
 
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    quote:
-      "Our new website instantly made us look like the premium brand we always wanted to be. Enquiries jumped within the first week.",
-    name: "Aarav Mehta",
-    role: "Founder, Veloura",
-    initials: "AM",
-  },
-  {
-    quote:
-      "They understood our business better than agencies charging 5x more. Clean, fast and delivered exactly on time.",
-    name: "Priya Sharma",
-    role: "Director, ACCD",
-    initials: "PS",
-  },
-  {
-    quote:
-      "The redesign completely changed how clients perceive us. We finally have a website that matches our reputation.",
-    name: "Rohan Kapoor",
-    role: "CEO, Omega",
-    initials: "RK",
-  },
-  {
-    quote:
-      "From the first call to launch, everything felt effortless. The attention to detail is genuinely world-class.",
-    name: "Neha Verma",
-    role: "Lead, Vriksh",
-    initials: "NV",
-  },
-  {
-    quote:
-      "Our ecommerce sales grew noticeably after launch. The buying experience feels smooth and trustworthy.",
-    name: "Karan Singh",
-    role: "Owner, 4 Knotts Stationery",
-    initials: "KS",
-  },
-  {
-    quote:
-      "They built us a custom platform that just works. Reliable, responsive and a real partner in our growth.",
-    name: "Ananya Iyer",
-    role: "Product Head, ClearMyChallan",
-    initials: "AI",
-  },
-];
+export const TESTIMONIALS: Testimonial[] = [];
 
 export type FAQItem = { question: string; answer: string };
 
@@ -382,7 +291,7 @@ export const FAQS: FAQItem[] = [
   {
     question: "How much does it cost to get a website made in India?",
     answer:
-      "Our premium business websites start from ₹15,000, e-commerce stores from ₹20,000, and the SEO Foundation package from ₹7,500. The final price depends on pages, features and integrations — we share a clear, fixed quote on a free consultation before any work begins, with no hidden charges.",
+      "Our websites start from just ₹5,555 (Starter), ₹9,999 (Business) and ₹14,999 (E-Commerce) — a fraction of typical agency rates. The final price depends on pages, features and integrations, and we share a clear, fixed quote on a free consultation before any work begins, with no hidden charges.",
   },
   {
     question: "Do you build websites for businesses in Delhi NCR?",

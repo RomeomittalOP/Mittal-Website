@@ -54,17 +54,21 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-6 flex items-center gap-4 text-sm">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 font-medium text-electric transition-colors hover:text-white"
+                      >
+                        Live Preview <ExternalLink size={14} />
+                      </a>
+                    )}
                     <a
-                      href="#contact"
-                      className="inline-flex items-center gap-1 font-medium text-electric transition-colors hover:text-white"
-                    >
-                      Live Preview <ExternalLink size={14} />
-                    </a>
-                    <a
-                      href="#contact"
+                      href="/#contact"
                       className="inline-flex items-center gap-1 font-medium text-white/60 transition-colors hover:text-white"
                     >
-                      View Case Study <ArrowUpRight size={14} />
+                      Enquire <ArrowUpRight size={14} />
                     </a>
                   </div>
                 </div>

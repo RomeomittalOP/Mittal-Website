@@ -3,7 +3,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { STATS } from "@/lib/data";
 import Reveal from "./Reveal";
-import CountUp from "./CountUp";
 
 const benefits = [
   "Build trust",
@@ -49,7 +48,7 @@ export default function About() {
           {STATS.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 0.08}>
               <div className="card-glow h-full">
-                <CountUp value={stat.value} className="font-display text-4xl font-bold gradient-text" />
+                <div className="font-display text-4xl font-bold gradient-text">{stat.value}</div>
                 <div className="mt-2 text-sm text-white/60">{stat.label}</div>
               </div>
             </Reveal>

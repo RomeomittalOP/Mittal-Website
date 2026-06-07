@@ -45,7 +45,7 @@ export const POSTS: Post[] = [
       { type: "h2", text: "Step 3 — Understand the cost" },
       {
         type: "p",
-        text: "In India, a premium professional website typically starts from around ₹15,000, while e-commerce stores start from ₹20,000. Price mainly depends on the number of pages, design complexity, and features like SEO, payments or custom integrations. Always ask for a clear, fixed quote upfront — no hidden charges.",
+        text: "In India, a clean professional website can start from as little as ₹5,555, while a more advanced business site is around ₹9,999 and e-commerce stores from ₹14,999. Price mainly depends on the number of pages, design complexity, and features like SEO, payments or custom integrations. Always ask for a clear, fixed quote upfront — no hidden charges.",
       },
       { type: "h2", text: "Step 4 — Register your project and let the team handle it" },
       {
@@ -62,7 +62,7 @@ export const POSTS: Post[] = [
     slug: "website-cost-in-india-2026",
     title: "How Much Does a Website Cost in India in 2026?",
     description:
-      "A clear, no-jargon breakdown of website pricing in India in 2026 — from ₹15,000 business websites to e-commerce stores and custom web apps — and what actually affects the cost.",
+      "A clear, no-jargon breakdown of website pricing in India in 2026 — from ₹5,555 starter sites to business websites, e-commerce stores and custom web apps — and what actually affects the cost.",
     date: "2026-05-26",
     readTime: "6 min read",
     keywords: ["website cost in india", "website design price", "how much does a website cost"],
@@ -71,12 +71,12 @@ export const POSTS: Post[] = [
         type: "p",
         text: "\"How much does a website cost?\" is the first question every business owner asks — and the honest answer is: it depends on what you need. Here's a transparent breakdown of real website pricing in India in 2026.",
       },
-      { type: "h2", text: "Business websites — from ₹15,000" },
+      { type: "h2", text: "Starter & business websites — ₹5,555 to ₹9,999" },
       {
         type: "p",
-        text: "Perfect for businesses, manufacturers, professionals and local brands. You get a premium, responsive design, lead-generation setup, WhatsApp integration, contact forms and an SEO-friendly structure — everything you need to look established and start getting enquiries.",
+        text: "Perfect for new businesses, professionals, manufacturers and local brands. You get a clean, responsive design, lead-generation setup, WhatsApp integration, contact forms and an SEO-friendly structure — everything you need to look established and start getting enquiries, at a fraction of typical agency rates.",
       },
-      { type: "h2", text: "E-commerce websites — from ₹20,000" },
+      { type: "h2", text: "E-commerce websites — from ₹14,999" },
       {
         type: "p",
         text: "For product businesses that want to sell online: a full product catalog, filters, shopping cart, payment gateway integration and an admin panel — a complete store that takes orders 24/7.",
@@ -141,7 +141,7 @@ export const POSTS: Post[] = [
       },
       {
         type: "p",
-        text: "Based in Delhi NCR and ready to grow online? MITTAL.WEBSITE builds premium websites for businesses across Delhi, Noida, Gurugram, Ghaziabad and Faridabad — starting from ₹15,000. Book a free consultation today.",
+        text: "Based in Delhi NCR and ready to grow online? MITTAL.WEBSITE builds premium websites for businesses across Delhi, Noida, Gurugram, Ghaziabad and Faridabad — starting from just ₹5,555. Book a free consultation today.",
       },
     ],
   },

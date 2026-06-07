@@ -38,13 +38,20 @@ export default function Pricing() {
 
                 <h3 className="font-display text-lg font-semibold text-white">{pkg.name}</h3>
 
-                <div className="mt-4 flex items-baseline gap-1.5">
-                  {pkg.from && <span className="text-sm text-white/45">From</span>}
-                  <span className="font-display text-4xl font-bold gradient-text">{pkg.price}</span>
-                  {pkg.priceNote && <span className="text-sm text-white/50">{pkg.priceNote}</span>}
-                  {pkg.regularPrice && (
-                    <span className="text-sm text-white/35 line-through">{pkg.regularPrice}</span>
+                <div className="mt-4">
+                  {pkg.marketPrice && (
+                    <div className="text-xs text-white/40">
+                      Agencies charge{" "}
+                      <span className="text-white/45 line-through">{pkg.marketPrice}</span>
+                    </div>
                   )}
+                  <div className="mt-1 flex items-baseline gap-1.5">
+                    {pkg.from && <span className="text-sm text-white/45">From</span>}
+                    <span className="font-display text-4xl font-bold gradient-text">{pkg.price}</span>
+                    {pkg.priceNote && (
+                      <span className="text-sm text-white/50">{pkg.priceNote}</span>
+                    )}
+                  </div>
                 </div>
 
                 <p className="mt-3 text-sm leading-relaxed text-white/55">{pkg.tagline}</p>
