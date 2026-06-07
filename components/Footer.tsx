@@ -1,13 +1,11 @@
 import Image from "next/image";
-import { Instagram, Linkedin, Github, Mail, Phone, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 import { NAV_LINKS, BRAND } from "@/lib/data";
 
 const socials = [
-  { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: Github, label: "GitHub", href: "https://github.com" },
   { icon: MessageCircle, label: "WhatsApp", href: BRAND.whatsapp },
   { icon: Mail, label: "Email", href: `mailto:${BRAND.email}` },
+  { icon: Phone, label: "Call", href: `tel:${BRAND.phone}` },
 ];
 
 export default function Footer() {
@@ -27,7 +25,7 @@ export default function Footer() {
               {BRAND.poweredBy}
             </p>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
-              {BRAND.tagline} Premium websites, landing pages and custom web apps built for growth.
+              {BRAND.tagline} Websites, e-commerce stores and custom web apps built for growth.
             </p>
             <p className="mt-3 text-xs leading-relaxed text-white/40">
               Website development agency serving Delhi NCR — Delhi, Noida, Gurugram, Ghaziabad &amp;
@@ -83,7 +81,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/40 sm:flex-row">
-          <p>© {new Date().getFullYear()} MITTAL® DIGITAL. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MITTAL.WEBSITE. All rights reserved.</p>
           <p>
             Built with Next.js, Tailwind &amp; Framer Motion ·{" "}
             <a href={`mailto:${BRAND.email}`} className="hover:text-white">

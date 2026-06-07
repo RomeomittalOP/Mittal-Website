@@ -17,10 +17,10 @@ export default function Projects() {
               Projects That <span className="gradient-text">Speak For Themselves</span>
             </>
           }
-          subtitle="A glimpse of the brands we've helped look premium and grow online."
+          subtitle="A few of the live websites we've designed and built. We keep our portfolio small and handpicked — more recent work is available on request."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mx-auto mt-14 grid max-w-4xl gap-6 sm:grid-cols-2">
           {PROJECTS.map((project, i) => (
             <Reveal key={project.name} delay={(i % 3) * 0.08} className="h-full">
               <Tilt className="h-full">

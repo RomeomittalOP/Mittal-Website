@@ -9,10 +9,10 @@ import {
 } from "lucide-react";
 
 export const BRAND = {
-  name: "MITTAL® DIGITAL",
+  name: "MITTAL.WEBSITE",
   poweredBy: "Powered by mittal.website",
   tagline: "Websites That Actually Grow Businesses.",
-  email: "shubhammittal1204@gmail.com",
+  email: "contact@mittaldev.website",
   phone: "+917701903505",
   phoneDisplay: "+91 77019 03505",
   whatsapp: "https://wa.me/917701903505",
@@ -38,10 +38,10 @@ export const TRUST_LOGOS: string[] = ["Solid State Lights", "ClearMyChallan"];
 export type Stat = { value: string; label: string };
 
 export const STATS: Stat[] = [
-  { value: "100%", label: "Client Satisfaction" },
   { value: "10-Day", label: "Average Delivery" },
-  { value: "On-Time", label: "Every Project Delivered" },
-  { value: "Founder-Led", label: "Hands-On Service" },
+  { value: "Fixed", label: "Pricing, No Surprises" },
+  { value: "Founder-Led", label: "You Talk Directly To Us" },
+  { value: "Free", label: "Strategy Consultation" },
 ];
 
 export type Service = {
@@ -319,9 +319,34 @@ export const FAQS: FAQItem[] = [
       "Yes. We build custom dashboards, portals, authentication, databases and complex web applications tailored precisely to how your business operates.",
   },
   {
+    question: "Who owns the website after it's delivered?",
+    answer:
+      "You do — 100%. Once the final payment is made, the website, code, content and accounts are completely yours. There's no lock-in, and you're free to host or manage it wherever you like.",
+  },
+  {
+    question: "How many revisions are included?",
+    answer:
+      "Every package includes 2 rounds of revisions on the design so we get it exactly right. We share progress at each stage, so there are no surprises at the end.",
+  },
+  {
+    question: "Is payment in milestones?",
+    answer:
+      "Yes. For most projects we work on a simple 50% advance to start and 50% on completion before launch. For larger or monthly engagements we agree a clear milestone schedule upfront.",
+  },
+  {
+    question: "Can I see my website before paying the full amount?",
+    answer:
+      "Absolutely. You'll see the design and a live staging link of your website before the final payment, so you know exactly what you're getting before it goes live.",
+  },
+  {
+    question: "Do you provide support after launch?",
+    answer:
+      "Yes. Every project includes a support window after launch for fixes, and we offer optional ongoing maintenance if you'd like us to keep your site updated long-term.",
+  },
+  {
     question: "Can you redesign existing websites?",
     answer:
-      "Absolutely. We specialise in transforming outdated, slow websites into modern, high-converting digital experiences while preserving your SEO.",
+      "Absolutely. We rebuild outdated, slow websites into modern, high-converting sites while preserving your existing SEO.",
   },
 ];
 

@@ -13,10 +13,10 @@ export default function Pricing() {
           eyebrow="Our Packages"
           title={
             <>
-              Premium Packages, <span className="gradient-text">Built For Growth</span>
+              Packages, <span className="gradient-text">Built For Growth</span>
             </>
           }
-          subtitle="We don't just build websites — we help businesses establish a strong digital presence, generate trust and convert visitors into customers. Pick the package that fits your stage."
+          subtitle="We don't just build websites — we help businesses establish a strong online presence, generate trust and convert visitors into customers. From one-time website builds to ongoing brand growth, pick what fits your stage."
         />
 
         <div className="mt-14 grid items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -41,7 +41,7 @@ export default function Pricing() {
                 <div className="mt-4">
                   {pkg.marketPrice && (
                     <div className="text-xs text-white/40">
-                      Agencies charge{" "}
+                      Typical market rate{" "}
                       <span className="text-white/45 line-through">{pkg.marketPrice}</span>
                     </div>
                   )}

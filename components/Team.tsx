@@ -26,7 +26,7 @@ const teams = [
   {
     icon: Wand2,
     name: "Motion & Interaction",
-    desc: "Subtle animations and micro-interactions that make every scroll feel polished and high-end.",
+    desc: "Subtle animations and micro-interactions that make every scroll feel smooth and considered.",
     tags: ["Motion", "Animation", "Interactions"],
   },
   {

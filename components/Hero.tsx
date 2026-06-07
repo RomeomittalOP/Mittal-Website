@@ -103,7 +103,7 @@ export default function Hero() {
           >
             <span className="eyebrow">
               <Sparkles size={14} className="text-white" />
-              Premium Web Development Agency
+              Web Development Agency · Delhi NCR
             </span>
           </motion.div>
 
@@ -113,9 +113,9 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-[4rem]"
           >
-            Websites That Make <br className="hidden sm:block" />
-            Businesses Look{" "}
-            <span className="gradient-text animate-gradient-pan">Expensive</span>
+            Websites That <br className="hidden sm:block" />
+            Grow Your{" "}
+            <span className="gradient-text animate-gradient-pan">Business</span>
           </motion.h1>
 
           <motion.p
@@ -124,8 +124,8 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="mt-6 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg"
           >
-            We build websites, landing pages, business portals and custom web solutions that
-            help businesses attract more customers and build trust online.
+            We build websites, e-commerce stores and custom web apps that help businesses attract
+            more customers, build trust and turn visitors into enquiries.
           </motion.p>
 
           <motion.div

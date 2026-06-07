@@ -59,8 +59,8 @@ export default async function BlogPost({
     datePublished: post.date,
     dateModified: post.date,
     inLanguage: "en-IN",
-    author: { "@type": "Organization", name: "MITTAL® DIGITAL" },
-    publisher: { "@type": "Organization", name: "MITTAL® DIGITAL" },
+    author: { "@type": "Organization", name: "MITTAL.WEBSITE" },
+    publisher: { "@type": "Organization", name: "MITTAL.WEBSITE" },
     mainEntityOfPage: `${siteUrl}/blog/${post.slug}`,
   };
 

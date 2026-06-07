@@ -30,7 +30,7 @@ export default function Founder() {
                 Founder, CEO &amp; Brand Ambassador
               </p>
               <p className="mt-1.5 text-sm leading-relaxed text-white/60">
-                Building premium websites that turn businesses into brands.
+                Building websites that turn businesses into brands.
               </p>
             </div>
           </div>

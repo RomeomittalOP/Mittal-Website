@@ -19,7 +19,7 @@ export default function FinalCTA() {
                 <span className="gradient-text animate-gradient-pan">Amazing?</span>
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base text-white/65 sm:text-lg">
-                Let&apos;s turn your idea into a premium digital experience that grows your business.
+                Let&apos;s turn your idea into a website that wins you more customers.
               </p>
               <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
                 <a href={`tel:${BRAND.phone}`} className="btn-primary group">

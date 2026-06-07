@@ -13,7 +13,7 @@ export default function Services() {
           eyebrow="What We Build"
           title={
             <>
-              Premium Services, <span className="gradient-text">Real Results</span>
+              What We Build, <span className="gradient-text">Built To Convert</span>
             </>
           }
           subtitle="Everything your business needs to win online — designed to convert visitors into paying customers."

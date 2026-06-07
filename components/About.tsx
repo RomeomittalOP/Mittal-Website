@@ -22,13 +22,13 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.05}>
             <h2 className="mt-5 font-display text-3xl font-bold tracking-tight sm:text-4xl">
-              Why <span className="gradient-text">MITTAL® DIGITAL?</span>
+              Why <span className="gradient-text">MITTAL.WEBSITE?</span>
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-5 text-lg leading-relaxed text-white/65">
               We don&apos;t just create websites. We create online experiences that help
-              businesses grow — engineered to look premium and built to convert.
+              businesses grow — designed to look credible and built to convert.
             </p>
           </Reveal>
 
