@@ -56,10 +56,7 @@ export default function Pricing() {
 
                 <p className="mt-3 text-sm leading-relaxed text-white/55">{pkg.tagline}</p>
 
-                <a
-                  href="/#contact"
-                  className={pkg.highlight ? "btn-primary mt-6 w-full" : "btn-ghost mt-6 w-full"}
-                >
+                <a href="/#contact" className="btn-primary mt-6 w-full">
                   {pkg.cta}
                 </a>
 
