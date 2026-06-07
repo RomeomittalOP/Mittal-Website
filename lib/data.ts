@@ -16,6 +16,7 @@ export const BRAND = {
   phone: "+917701903505",
   phoneDisplay: "+91 77019 03505",
   whatsapp: "https://wa.me/917701903505",
+  instagram: "https://www.instagram.com/mittal.website",
   startingPrice: "₹5,555",
 };
 

@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageCircle, Instagram } from "lucide-react";
 import { NAV_LINKS, BRAND } from "@/lib/data";
 
 const socials = [
+  { icon: Instagram, label: "Instagram", href: BRAND.instagram },
   { icon: MessageCircle, label: "WhatsApp", href: BRAND.whatsapp },
   { icon: Mail, label: "Email", href: `mailto:${BRAND.email}` },
   { icon: Phone, label: "Call", href: `tel:${BRAND.phone}` },

@@ -84,7 +84,7 @@ export default function RootLayout({
         slogan: BRAND.tagline,
         email: BRAND.email,
         telephone: BRAND.phone,
-        sameAs: [BRAND.whatsapp],
+        sameAs: [BRAND.instagram, BRAND.whatsapp],
       },
       {
         "@type": "WebSite",
