@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Founder from "@/components/Founder";
 import Services from "@/components/Services";
+import Showcase from "@/components/showcase/Showcase";
 import Team from "@/components/Team";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import Pricing from "@/components/Pricing";
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Founder />
       <Services />
+      <Showcase />
       <Team />
       <MarqueeStrip />
       <Pricing />
