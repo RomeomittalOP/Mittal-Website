@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import {
-  Sparkles,
   X,
   Send,
   CheckCircle2,
@@ -55,10 +55,17 @@ const id = () => Math.random().toString(36).slice(2);
 
 const Avatar = ({ size = 26 }: { size?: number }) => (
   <span
-    className="relative flex shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-white to-white/70 text-black shadow-[0_0_22px_-4px_rgba(255,255,255,0.45)]"
+    className="relative flex shrink-0 items-center justify-center overflow-hidden rounded-full ring-1 ring-white/20 shadow-[0_0_22px_-4px_rgba(255,255,255,0.45)]"
     style={{ width: size, height: size }}
   >
-    <Sparkles size={Math.round(size * 0.5)} strokeWidth={2.2} />
+    <Image
+      src="/jayden.png"
+      alt="JAYDEN — AI Website Consultant"
+      width={size * 2}
+      height={size * 2}
+      className="h-full w-full object-cover"
+      priority={size >= 32}
+    />
   </span>
 );
 
