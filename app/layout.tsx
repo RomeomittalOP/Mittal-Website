@@ -10,6 +10,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
+import Jayden from "@/components/jayden/Jayden";
 import "./globals.css";
 
 const inter = Inter({
@@ -156,6 +157,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <FloatingActions />
+        <Jayden />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
