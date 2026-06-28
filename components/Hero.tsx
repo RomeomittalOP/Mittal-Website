@@ -2,6 +2,8 @@
 
 import type { MotionValue } from "framer-motion";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import MagneticButton from "./MagneticButton";
+import TextReveal from "./TextReveal";
 import {
   ArrowRight,
   Sparkles,
@@ -107,16 +109,24 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-[4rem]"
-          >
-            Websites That <br className="hidden sm:block" />
-            Grow Your{" "}
-            <span className="gradient-text animate-gradient-pan">Business</span>
-          </motion.h1>
+          <h1 className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight sm:text-5xl lg:text-[4rem]">
+            <TextReveal text="Websites That" delay={0.15} />
+            <br className="hidden sm:block" />
+            <TextReveal text="Grow Your" delay={0.35} />{" "}
+            <span className="inline-block overflow-hidden align-bottom">
+              <motion.span
+                className="gradient-text animate-gradient-pan inline-block"
+                initial={{ y: "110%", opacity: 0 }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.55 },
+                }}
+              >
+                Business
+              </motion.span>
+            </span>
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
@@ -134,13 +144,13 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-9 flex flex-wrap items-center gap-4"
           >
-            <a href="#contact" className="btn-primary group">
+            <MagneticButton href="#contact" className="btn-primary group">
               Get Free Consultation
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-            </a>
-            <a href="#projects" className="btn-ghost">
+            </MagneticButton>
+            <MagneticButton href="#projects" className="btn-ghost" strength={8}>
               View Our Work
-            </a>
+            </MagneticButton>
           </motion.div>
 
           <motion.p

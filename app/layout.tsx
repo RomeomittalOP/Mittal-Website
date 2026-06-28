@@ -11,6 +11,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingActions from "@/components/FloatingActions";
 import Jayden from "@/components/jayden/Jayden";
+import SmoothScroll from "@/components/SmoothScroll";
+import NoiseOverlay from "@/components/NoiseOverlay";
 import "./globals.css";
 
 const inter = Inter({
@@ -147,8 +149,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <SmoothScroll />
         <Preloader />
         <AuroraBackground />
+        <NoiseOverlay />
         <ScrollProgress />
         <CursorFollower />
         <CardSpotlight />

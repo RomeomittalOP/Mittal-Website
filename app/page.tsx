@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import Bento from "@/components/Bento";
 import Founder from "@/components/Founder";
 import Services from "@/components/Services";
 import Showcase from "@/components/showcase/Showcase";
@@ -17,6 +18,7 @@ export default function Home() {
     <main>
       <Hero />
       <About />
+      <Bento />
       <Founder />
       <Services />
       <Showcase />
