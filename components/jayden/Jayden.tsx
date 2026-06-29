@@ -79,7 +79,7 @@ export default function Jayden() {
       id: "intro",
       from: "jayden",
       text:
-        "Hey 👋 I'm JAYDEN, Mittal.website's AI consultant. Tell me about your business — I'll figure out the right kind of website, features, timeline and budget range for you in under a minute.",
+        "Hey 👋 I'm JAYDEN — Mittal.website's AI consultant. Hindi, Hinglish ya English, jis bhi tarah comfortable ho, baat kar le. Apne business ke baare mein bata aur main perfect website plan suggest kar dunga.",
     },
   ]);
   const [text, setText] = useState("");
@@ -235,7 +235,7 @@ export default function Jayden() {
     }
   };
 
-  /* ---------- free chat / FAQ ---------- */
+  /* ---------- free chat: try LLM, fall back to local rule engine ---------- */
 
   const sendFree = async (e?: React.FormEvent) => {
     e?.preventDefault();
@@ -244,20 +244,50 @@ export default function Jayden() {
     pushUser(t);
     setText("");
     setTyping(true);
-    await new Promise((r) => setTimeout(r, 550));
-    setTyping(false);
-    const ans = findFaqAnswer(t);
-    if (ans) {
-      pushJayden({ text: ans });
-    } else {
-      pushJayden({
-        text:
-          "Honestly that one's better answered on a 5-minute chat — easiest is to WhatsApp +91 77019 03505. Want me to share your details so the team pings you?",
+
+    // Build conversation history for the LLM
+    const history = messages
+      .filter((m) => m.id !== "intro" && m.text)
+      .map((m) => ({
+        role: (m.from === "jayden" ? "assistant" : "user") as "assistant" | "user",
+        content: m.text!,
+      }));
+
+    try {
+      const res = await fetch("/api/jayden", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          messages: [...history, { role: "user", content: t }],
+        }),
       });
-      if (step === "free-chat" || step === "submitted") {
-        await new Promise((r) => setTimeout(r, 250));
-        pushJayden({ node: <FinalCTAs /> });
+
+      if (res.ok && res.body) {
+        // Stream the LLM response
+        setTyping(false);
+        const assistantId = id();
+        setMessages((m) => [...m, { id: assistantId, from: "jayden", text: "" }]);
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let buf = "";
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          buf += decoder.decode(value, { stream: true });
+          setMessages((m) =>
+            m.map((x) => (x.id === assistantId ? { ...x, text: buf } : x))
+          );
+        }
+        return;
       }
+
+      // No LLM available — fall back to the local language-aware engine
+      await new Promise((r) => setTimeout(r, 350));
+      setTyping(false);
+      pushJayden({ text: findFaqAnswer(t) });
+    } catch {
+      setTyping(false);
+      pushJayden({ text: findFaqAnswer(t) });
     }
   };
 
@@ -395,29 +425,78 @@ export default function Jayden() {
     <>
       <AnimatePresence>
         {!open && (
-          <motion.button
+          <motion.div
             key="launcher"
-            initial={{ opacity: 0, scale: 0.85, y: 14 }}
+            initial={{ opacity: 0, scale: 0.6, y: 24 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.85, y: 14 }}
-            whileHover={{ y: -2 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            onClick={() => setOpen(true)}
-            className="group fixed bottom-5 right-5 z-[81] flex items-center gap-3 rounded-full border border-white/15 bg-[#101013]/90 py-2 pl-2 pr-4 shadow-[0_18px_50px_-10px_rgba(0,0,0,0.7)] backdrop-blur-md transition-all hover:border-white/30 sm:bottom-24"
-            aria-label="Open JAYDEN — AI Website Consultant"
+            exit={{ opacity: 0, scale: 0.6, y: 24 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed bottom-[100px] right-5 z-[81] sm:bottom-28"
           >
-            <span className="absolute -inset-px -z-10 rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.18),transparent_70%)] opacity-70" />
-            <span className="relative">
-              <Avatar size={36} />
-              <span className="absolute -right-0 -top-0 h-2.5 w-2.5 rounded-full border-2 border-[#101013] bg-emerald-400" />
-            </span>
-            <span className="hidden flex-col items-start text-left sm:flex">
-              <span className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/45">
-                Need a Website?
-              </span>
-              <span className="text-sm font-semibold text-white">Ask JAYDEN</span>
-            </span>
-          </motion.button>
+            {/* Gentle floating bob wrapper */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+              className="relative"
+            >
+              {/* Soft ambient halo (extends visually beyond the button) */}
+              <span className="pointer-events-none absolute -inset-6 -z-10 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.16),transparent_65%)] blur-xl" />
+
+              {/* Expanding pulse rings */}
+              {[0, 1].map((i) => (
+                <motion.span
+                  key={i}
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-full border border-white/30"
+                  initial={{ scale: 1, opacity: 0.55 }}
+                  animate={{ scale: 1.7, opacity: 0 }}
+                  transition={{
+                    duration: 2.4,
+                    repeat: Infinity,
+                    delay: i * 1.2,
+                    ease: "easeOut",
+                  }}
+                />
+              ))}
+
+              {/* Rotating conic ring (always spins) */}
+              <motion.span
+                aria-hidden
+                className="pointer-events-none absolute -inset-1.5 rounded-full opacity-90 [mask:radial-gradient(closest-side,transparent_70%,black_72%)]"
+                style={{
+                  background:
+                    "conic-gradient(from 0deg, transparent, rgba(255,255,255,0.55) 25%, transparent 50%, rgba(255,255,255,0.3) 75%, transparent)",
+                }}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+              />
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.96 }}
+                onClick={() => setOpen(true)}
+                aria-label="Open JAYDEN — AI Website Consultant"
+                className="group relative flex items-center gap-3 rounded-full border border-white/20 bg-[#0e0e11]/95 py-2 pl-2 pr-2 shadow-[0_22px_60px_-10px_rgba(0,0,0,0.75)] backdrop-blur-md transition-colors hover:border-white/40 sm:pr-4"
+              >
+                <span className="relative block">
+                  <Avatar size={48} />
+                  {/* Live dot */}
+                  <span className="absolute right-0.5 top-0.5 flex h-3 w-3 items-center justify-center">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                    <span className="relative inline-flex h-2.5 w-2.5 rounded-full border-2 border-[#0e0e11] bg-emerald-400" />
+                  </span>
+                </span>
+
+                {/* Text — desktop only */}
+                <span className="hidden flex-col items-start pr-2 text-left sm:flex">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white/45">
+                    AI · Live
+                  </span>
+                  <span className="text-sm font-semibold text-white">Ask JAYDEN</span>
+                </span>
+              </motion.button>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
 

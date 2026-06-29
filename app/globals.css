@@ -5,10 +5,50 @@
 :root {
   --background: #0b0b0d;
   --foreground: #f5f5f3;
+  --surface-faint: rgba(255, 255, 255, 0.04);
+  --surface-border: rgba(255, 255, 255, 0.08);
+}
+
+html.light {
+  --background: #f3efe7;
+  --foreground: #14110d;
+  --surface-faint: rgba(20, 17, 13, 0.04);
+  --surface-border: rgba(20, 17, 13, 0.1);
+}
+
+/* Light-mode adjustments for elements that hard-code white/* tones */
+html.light body::before {
+  background:
+    radial-gradient(58rem 50rem at 78% -12%, rgba(122, 92, 255, 0.10), transparent 60%),
+    radial-gradient(46rem 46rem at 6% 8%, rgba(46, 139, 255, 0.08), transparent 55%);
+}
+html.light .glass,
+html.light .glass-strong {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(20, 17, 13, 0.08);
+  backdrop-filter: blur(14px);
+}
+html.light .card-glow {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(20, 17, 13, 0.08);
+}
+html.light .btn-primary {
+  background: #14110d;
+  color: #f5f5f3;
+}
+html.light .btn-ghost,
+html.light .btn-gold-outline {
+  color: #14110d;
+  border-color: rgba(20, 17, 13, 0.2);
+}
+html.light .eyebrow {
+  background: rgba(20, 17, 13, 0.04);
+  border-color: rgba(20, 17, 13, 0.1);
+  color: rgba(20, 17, 13, 0.6);
 }
 
 * {
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: var(--surface-border);
 }
 
 html {

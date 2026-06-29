@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS } from "@/lib/data";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -54,7 +55,8 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden items-center gap-2 md:flex">
+          <ThemeToggle />
           <a href="/#contact" className="btn-primary !px-6 !py-2.5 text-sm">
             Get Free Consultation
           </a>
@@ -90,13 +92,16 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <a
-              href="/#contact"
-              onClick={() => setOpen(false)}
-              className="btn-primary mt-2 w-full"
-            >
-              Get Free Consultation
-            </a>
+            <div className="mt-2 flex items-center gap-2">
+              <ThemeToggle />
+              <a
+                href="/#contact"
+                onClick={() => setOpen(false)}
+                className="btn-primary flex-1"
+              >
+                Get Free Consultation
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
