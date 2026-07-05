@@ -1,0 +1,67 @@
+# MITTAL.WEBSITE
+
+> Founder-led web design studio based in Delhi NCR, India. We build custom websites, e-commerce stores, and web applications that help businesses attract customers and convert visitors into leads. Fixed pricing from ₹5,555. Every project is designed from scratch — no templates.
+
+## About
+
+MITTAL.WEBSITE is a boutique web development agency founded by Shubham Mittal. We serve businesses across Delhi NCR (Delhi, Noida, Gurugram, Ghaziabad, Faridabad) and all of India remotely. Our approach is founder-led — clients communicate directly with the studio founder, not account managers.
+
+### Key Differentiators
+- **Custom design from scratch** — no templates, no themes with logo swaps. Every site is unique.
+- **Fixed transparent pricing** — starting from ₹5,555 (Starter) to ₹14,999+ (E-Commerce). No hidden charges.
+- **10-day average delivery** — most projects launch within 10 business days.
+- **100% ownership** — clients own all code, domain, and hosting after final payment. No lock-in.
+- **Founder-led communication** — direct WhatsApp communication with the founder.
+- **50/50 payment** — 50% advance, 50% on completion after client approval.
+
+## Services & Pricing
+
+| Service | Price | Market Rate | Description |
+|---------|-------|-------------|-------------|
+| Starter Website | ₹5,555 | ~₹15,000 | Up to 5 pages, responsive, contact form, WhatsApp integration, basic SEO |
+| Business Website | ₹9,999 | ~₹30,000 | Premium custom design, lead generation, SEO structure, animations, priority delivery |
+| E-Commerce Website | from ₹14,999 | ~₹50,000 | Product catalog, cart, payment gateway, admin panel, order management |
+| Brand Growth Package | ₹6,999/month | ~₹15,000/mo | 12 premium creatives, content strategy, branding, WhatsApp lead-gen |
+| SEO Foundation | from ₹4,999 | ~₹12,000 | Meta optimization, schema markup, sitemap, technical audit, local SEO |
+| Custom Solutions | Custom quote | Varies | AI automation, dashboards, CRM systems, internal tools |
+
+## Process
+
+1. **Discovery call** — 15-minute WhatsApp call to understand business, goals, and requirements.
+2. **Design & build** — Custom design from scratch with live staging preview.
+3. **Review & refine** — Client reviews on staging, 2 revision rounds included.
+4. **Launch & handoff** — Site goes live, client owns everything.
+
+## Contact
+
+- **WhatsApp / Phone**: +91 77019 03505
+- **Email**: contact@mittaldev.website
+- **Website**: https://mittaldev.website
+- **Instagram**: https://www.instagram.com/mittal.website
+- **Location**: Delhi NCR, India (also serving all India remotely)
+
+## Portfolio
+
+- **Solid State Lights** (solidstatelights.in) — LED lighting manufacturer website
+- **ClearMyChallan** (clearmychallan.com) — Traffic challan resolution platform
+- **100+ industry demos** available at /website-gallery across 15 categories: Restaurant, Gym, Healthcare, E-Commerce, Real Estate, Education, Travel, SaaS, Portfolio, Business, NGO, Events, Blog, Landing Pages, Custom Apps
+
+## FAQ
+
+**What does fixed pricing mean?**
+The quoted price is the final price. No surprise charges for revisions, meetings, or discussed scope.
+
+**Do I own everything?**
+Yes. After final payment, you own the code, domain, and hosting accounts. No lock-in.
+
+**How long does delivery take?**
+Most projects launch in ~10 business days. Complex apps may take longer — timeline is agreed before starting.
+
+**What's the payment structure?**
+50% advance to start, 50% after approval on staging. You never pay full before seeing the final product.
+
+**Can I see my site before launch?**
+Always. You get a staging preview, request changes (2 rounds), and approve before going public.
+
+**Do you redesign existing sites?**
+Yes. Same pricing applies based on the scope of the new site.

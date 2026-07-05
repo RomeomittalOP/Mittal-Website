@@ -13,6 +13,7 @@ import FloatingActions from "@/components/FloatingActions";
 import Jayden from "@/components/jayden/Jayden";
 import SmoothScroll from "@/components/SmoothScroll";
 import NoiseOverlay from "@/components/NoiseOverlay";
+import ChromeWrapper from "@/components/ChromeWrapper";
 import "./globals.css";
 
 const inter = Inter({
@@ -149,19 +150,23 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="font-sans antialiased" suppressHydrationWarning>
-        <SmoothScroll />
-        <Preloader />
-        <AuroraBackground />
-        <NoiseOverlay />
-        <ScrollProgress />
-        <CursorFollower />
-        <CardSpotlight />
-        <AnnouncementBar />
-        <Navbar />
+        <ChromeWrapper>
+          <SmoothScroll />
+          <Preloader />
+          <AuroraBackground />
+          <NoiseOverlay />
+          <ScrollProgress />
+          <CursorFollower />
+          <CardSpotlight />
+          <AnnouncementBar />
+          <Navbar />
+        </ChromeWrapper>
         {children}
-        <Footer />
-        <FloatingActions />
-        <Jayden />
+        <ChromeWrapper>
+          <Footer />
+          <FloatingActions />
+          <Jayden />
+        </ChromeWrapper>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
